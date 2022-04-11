@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/QRGenerator/static/css/main.0e10a9f7.css",
+    "main.js": "/QRGenerator/static/js/main.cd4f891a.js",
+    "index.html": "/QRGenerator/index.html",
+    "main.0e10a9f7.css.map": "/QRGenerator/static/css/main.0e10a9f7.css.map",
+    "main.cd4f891a.js.map": "/QRGenerator/static/js/main.cd4f891a.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.0e10a9f7.css",
+    "static/js/main.cd4f891a.js"
+  ]
+}
