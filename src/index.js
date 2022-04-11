@@ -14,7 +14,7 @@ ReactDOM.render(
         <Route path='/QRGenerator' element={<App />} />
 
         {data.map((item,index)=>{
-          return <Route path={`/QRGenerator/${index}`} element={<Redirect index={index} link={item}/>} />
+          return <Route path={`/QRGenerator/${'redirect'+index}`} element={<Redirect index={index} link={item}/>} />
         })}
       </Routes>
     </BrowserRouter>
