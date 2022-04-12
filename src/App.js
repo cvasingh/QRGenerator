@@ -6,12 +6,17 @@ import Redirect from './Redirect';
 
 function App() {
   var [url, setUrl] = useState(window.location.href);
-  const [redirect, setRedirect] = useState(false);
+  const index = url.split("#")[1] ? url.split("#")[1] : false;
+  const link = data[index];
   useEffect(() => {
-    url.split("#")[1] ? setRedirect(true) : setRedirect(false)
+    if (index) {
+      window.location.replace(link);
+      setTimeout(() => {
+        window.location.reload();
+      }, 2000);
+    }
   }, [])
   console.log(url);
-  console.log(redirect);
 
 
 
@@ -75,7 +80,6 @@ function App() {
         </div>
       </div>
     </div>
-    {redirect && <Redirect index={url.split("#")[1]} />}
   </>
 }
 
