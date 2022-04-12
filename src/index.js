@@ -10,12 +10,9 @@ ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
       <Routes>
-        <Route path='*' element={<NotFounds/>} />
+        <Route path='*' element={<NotFounds />} />
         <Route path='/QRGenerator' element={<App />} />
-
-        {data.map((item,index)=>{
-          return <Route path={`/QRGenerator/${'redirect'+index}`} element={<Redirect index={index} link={item}/>} />
-        })}
+        {/* <Route path='/QRGenerator/#0' element={<Redirect index={0} />} /> */}
       </Routes>
     </BrowserRouter>
   </React.StrictMode>,

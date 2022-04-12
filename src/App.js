@@ -1,9 +1,20 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import './App.css';
 import { QRgen } from './QRgen';
 import { domainName, data } from './data'
+import Redirect from './Redirect';
 
 function App() {
+  var [url, setUrl] = useState(window.location.href);
+  const [redirect, setRedirect] = useState(false);
+  useEffect(() => {
+    url.split("#")[1] ? setRedirect(true) : setRedirect(false)
+  }, [])
+  console.log(url);
+  console.log(redirect);
+
+
+
   const [arr, setArr] = useState(data);
   const [addnew, setAddnew] = useState('');
   const handleGenerate = (e) => {
@@ -46,7 +57,7 @@ function App() {
                 return <td>
                   <div class="linkbox">
                     <div class="qrbox">
-                      <QRgen link={`${domainName}${index}`} />
+                      <QRgen link={domainName + index} />
                     </div>
                     <div>
                       <form onSubmit={handleUPdate}>
@@ -64,6 +75,7 @@ function App() {
         </div>
       </div>
     </div>
+    {redirect && <Redirect index={url.split("#")[1]} />}
   </>
 }
 
